@@ -44,14 +44,11 @@
       "type": "number",
       "minimum": 1
     },
-<<<<<<< HEAD
     "uom": {
       "type": "string",
       "maxLength": 50,
       "description": "Unit of Measure for this container type"
     },
-=======
->>>>>>> kunal/main
     "datasheet_url": {
       "type": "string",
       "maxLength": 500,

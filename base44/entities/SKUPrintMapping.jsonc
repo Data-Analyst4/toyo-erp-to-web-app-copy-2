@@ -1,32 +1,38 @@
 {
   "name": "SKUPrintMapping",
   "type": "object",
-  "title": "SKU Print Template Mapping",
+  "title": "SKU Print Mapping",
   "properties": {
     "mapping_id": {
       "type": "string",
       "minLength": 1,
       "maxLength": 100
     },
+    "product_code": {
+      "type": "string",
+      "maxLength": 100
+    },
     "sku_code": {
       "type": "string",
       "maxLength": 100,
-      "description": "Reference to ProductMaster.item_code"
+      "description": "Alias of product_code (ProductMaster.item_code)"
     },
-    "template_id": {
+    "label_variant_id": {
       "type": "string",
-      "maxLength": 100,
-      "description": "Reference to LblPrintTemplate.template_id"
+      "maxLength": 100
     },
-    "artwork_id": {
+    "ryan_template_id": {
       "type": "string",
-      "maxLength": 100,
-      "description": "Reference to LabelArtwork.artwork_id \u2014 which artwork variant this template prints"
+      "maxLength": 100
     },
-    "is_default": {
-      "type": "boolean",
-      "default": false,
-      "description": "If true, this template is pre-selected when creating label plans for this SKU"
+    "batch_format_rule_id": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "payload_map_json": {
+      "type": "string",
+      "maxLength": 5000,
+      "description": "JSON string: [{placeholder, source, format}] mapping"
     },
     "is_active": {
       "type": "boolean",
@@ -35,7 +41,6 @@
   },
   "required": [
     "mapping_id",
-    "sku_code",
-    "template_id"
+    "product_code"
   ]
 }
